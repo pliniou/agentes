@@ -1,0 +1,43 @@
+{
+  "name": "especialista-requisitos-android",
+  "description": "Maps requirements, implicit constraints, technical context and missing information before implementation work starts.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "diagnostico",
+    "contexto",
+    "android",
+    "kotlin",
+    "jetpack",
+    "levantamento",
+    "discovery",
+    "analisar contexto"
+  ],
+  "tags": [
+    "analysis",
+    "discovery",
+    "context",
+    "requirements"
+  ],
+  "deliverables": [
+    "mapa de contexto",
+    "restricoes explicitas e implicitas",
+    "lacunas de informacao",
+    "suposicoes que precisam ser validadas"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando for preciso entender melhor o problema, mapear restricoes ou reduzir ambiguidade antes de decidir a solucao.",
+  "fallback_behavior": "Se o pedido ja estiver completo, devolver apenas um resumo do contexto e os principais riscos de entendimento."
+}

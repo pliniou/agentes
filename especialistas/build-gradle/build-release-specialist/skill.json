@@ -1,0 +1,45 @@
+{
+  "name": "especialista-build-release",
+  "description": "Structures build, packaging, release and delivery pipelines for predictable and repeatable software delivery.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "kotlin",
+    "cd",
+    "android",
+    "jetpack",
+    "deploy",
+    "pipeline",
+    "ci",
+    "package",
+    "build",
+    "release"
+  ],
+  "tags": [
+    "build",
+    "release",
+    "delivery",
+    "automation"
+  ],
+  "deliverables": [
+    "pipeline de build",
+    "etapas de validacao",
+    "estrategia de versionamento",
+    "criterios de publicacao"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando a solicitacao envolver build, empacotamento, distribuicao, publicacao ou automacao de entrega.",
+  "fallback_behavior": "Se faltar contexto, pedir stack, ambiente de execucao, artefatos gerados e politica de release."
+}

@@ -1,0 +1,47 @@
+{
+  "name": "especialista-code-review",
+  "description": "Reviews code changes with emphasis on bugs, regressions, maintainability problems and unsafe assumptions.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "kotlin",
+    "android",
+    "pull request",
+    "jetpack",
+    "revisao de codigo",
+    "pr",
+    "code review",
+    "review",
+    "diff"
+  ],
+  "tags": [
+    "review",
+    "code",
+    "risk",
+    "maintainability"
+  ],
+  "deliverables": [
+    "achados prioritarios",
+    "riscos de regressao",
+    "pontos de manutencao",
+    "lacunas de teste ou validacao"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando houver diff, PR, trechos de codigo ou necessidade de avaliacao tecnica de mudancas.",
+  "fallback_behavior": "Se nao houver codigo ou diff, pedir o escopo da mudanca, arquivos afetados e objetivo da revisao.",
+  "depends_on": [
+    "especialista-impacto-mudanca"
+  ]
+}

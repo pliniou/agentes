@@ -1,0 +1,47 @@
+{
+  "name": "especialista-quality-gate",
+  "description": "Evaluates quality signals such as standards adherence, testability, clarity, consistency and operational readiness.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "qualidade",
+    "kotlin",
+    "android",
+    "jetpack",
+    "lint",
+    "boas praticas",
+    "consistencia",
+    "padroes",
+    "quality gate"
+  ],
+  "tags": [
+    "quality",
+    "standards",
+    "readiness",
+    "governance"
+  ],
+  "deliverables": [
+    "criterios de qualidade",
+    "desvios de padrao",
+    "riscos de prontidao",
+    "recomendacoes para elevar a barra tecnica"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando a solicitacao exigir avaliacao de qualidade, padronizacao, readiness ou conformidade tecnica.",
+  "fallback_behavior": "Se os criterios nao estiverem definidos, pedir padroes adotados, nivel de rigor e contexto de entrega.",
+  "depends_on": [
+    "especialista-analise-projeto"
+  ]
+}

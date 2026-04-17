@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv
+venv/
+env/
+.env
+
+# Tests
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Android / JVM specific
+build/
+.gradle/
+captures/
+.idea/
+*.iml
+local.properties
+.DS_Store

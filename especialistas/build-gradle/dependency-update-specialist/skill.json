@@ -1,0 +1,47 @@
+{
+  "name": "especialista-atualizacao-dependencias",
+  "description": "Evaluates version drift, dependency updates and rollout risk for libraries, services and platform integrations.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "dependencia",
+    "atualizacao",
+    "kotlin",
+    "android",
+    "jetpack",
+    "upgrade",
+    "versao",
+    "release note",
+    "patch"
+  ],
+  "tags": [
+    "dependencies",
+    "updates",
+    "maintenance",
+    "release"
+  ],
+  "deliverables": [
+    "inventario de atualizacoes",
+    "riscos de upgrade",
+    "ordem segura de migracao",
+    "plano de validacao apos update"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando a solicitacao envolver upgrades, versoes, dependencias desatualizadas, changelogs ou estrategia de migracao.",
+  "fallback_behavior": "Se faltarem detalhes, pedir dependencias alvo, versao atual, janela de manutencao e tolerancia a risco.",
+  "depends_on": [
+    "especialista-analise-projeto"
+  ]
+}

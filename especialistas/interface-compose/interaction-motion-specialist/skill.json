@@ -1,0 +1,47 @@
+{
+  "name": "especialista-animacoes",
+  "description": "Define motion, microinteractions and transition behavior for interfaces, balancing clarity, responsiveness and implementation effort.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "motion",
+    "microinteraction",
+    "kotlin",
+    "android",
+    "jetpack",
+    "animation",
+    "transition",
+    "interacao",
+    "feedback visual"
+  ],
+  "tags": [
+    "ui",
+    "ux",
+    "motion",
+    "interaction"
+  ],
+  "deliverables": [
+    "mapa de interacoes e estados",
+    "criterios de motion e acessibilidade",
+    "sequencia recomendada de transicoes",
+    "riscos de implementacao e custo visual"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando a solicitacao exigir animacoes, transicoes, feedback visual, sensacao de fluidez ou refinamento de interacao.",
+  "fallback_behavior": "Se o fluxo ou a interface nao estiverem claros, pedir contexto sobre telas, gatilhos, estados e restricoes de plataforma.",
+  "depends_on": [
+    "especialista-interface"
+  ]
+}

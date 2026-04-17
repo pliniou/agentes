@@ -1,0 +1,47 @@
+{
+  "name": "especialista-navegacao",
+  "description": "Designs navigation models, journey flows and route transitions across product experiences and multi-step workflows.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "navegacao",
+    "kotlin",
+    "deep link",
+    "android",
+    "jetpack",
+    "fluxo",
+    "journey",
+    "back stack",
+    "rota"
+  ],
+  "tags": [
+    "navigation",
+    "flow",
+    "journey",
+    "ux"
+  ],
+  "deliverables": [
+    "mapa de fluxos",
+    "regras de navegacao",
+    "tratamento de estados e retornos",
+    "pontos de ruptura na jornada"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando a solicitacao envolver fluxos de usuario, roteamento, passos sequenciais ou navegacao entre estados/telas.",
+  "fallback_behavior": "Se o fluxo nao estiver descrito, pedir origem, destinos, excecoes, estados intermediarios e objetivo da jornada.",
+  "depends_on": [
+    "especialista-interface"
+  ]
+}

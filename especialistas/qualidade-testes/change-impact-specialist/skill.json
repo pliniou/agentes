@@ -1,0 +1,43 @@
+{
+  "name": "especialista-impacto-mudanca",
+  "description": "Assesses blast radius, affected dependencies and likely regressions before or after a proposed code change.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "efeitos colaterais",
+    "android",
+    "kotlin",
+    "jetpack",
+    "analise de impacto",
+    "dependencias",
+    "impacto",
+    "blast radius"
+  ],
+  "tags": [
+    "impact",
+    "dependencies",
+    "regression",
+    "analysis"
+  ],
+  "deliverables": [
+    "areas afetadas",
+    "dependencias diretas e indiretas",
+    "cenarios de regressao",
+    "mitigacoes recomendadas"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando for necessario prever consequencias, identificar dependencias ou estimar risco de mudanca.",
+  "fallback_behavior": "Se a mudanca nao estiver clara, pedir artefatos afetados, comportamento esperado e fronteiras do sistema."
+}

@@ -1,0 +1,47 @@
+{
+  "name": "especialista-background-jobs",
+  "description": "Designs background processing, scheduled work and asynchronous execution flows with operational safety and observability.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "kotlin",
+    "android",
+    "jetpack",
+    "background",
+    "scheduler",
+    "queue",
+    "assincrono",
+    "worker",
+    "job"
+  ],
+  "tags": [
+    "async",
+    "jobs",
+    "operations",
+    "reliability"
+  ],
+  "deliverables": [
+    "estrategia de execucao assicrona",
+    "controles de retentativa e idempotencia",
+    "observabilidade e alertas",
+    "restricoes operacionais"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando houver tarefas agendadas, workers, filas, sincronizacao ou processamento fora do fluxo principal.",
+  "fallback_behavior": "Se a tarefa nao estiver caracterizada, pedir frequencia, SLA, origem do disparo e politica de falha.",
+  "depends_on": [
+    "especialista-arquitetura"
+  ]
+}

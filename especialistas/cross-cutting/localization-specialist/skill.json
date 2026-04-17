@@ -1,0 +1,47 @@
+{
+  "name": "especialista-localizacao",
+  "description": "Defines internationalization, localization and regional adaptation strategies for product interfaces and content.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "locale",
+    "kotlin",
+    "android",
+    "jetpack",
+    "traducao",
+    "i18n",
+    "l10n",
+    "idioma",
+    "localization"
+  ],
+  "tags": [
+    "localization",
+    "content",
+    "ux",
+    "regionalization"
+  ],
+  "deliverables": [
+    "estrategia de internacionalizacao",
+    "inventario de conteudo localizavel",
+    "regras de formato regional",
+    "riscos culturais e tecnicos"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando o projeto precisar suportar varios idiomas, formatos regionais ou adaptacao cultural.",
+  "fallback_behavior": "Se os mercados alvo nao estiverem claros, pedir idiomas, regioes, prioridades e escopo do conteudo.",
+  "depends_on": [
+    "especialista-interface"
+  ]
+}

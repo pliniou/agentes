@@ -1,0 +1,45 @@
+{
+  "name": "especialista-dados",
+  "description": "Designs data models, persistence strategies, integrations and data flow boundaries for application and platform projects.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "kotlin",
+    "api",
+    "android",
+    "jetpack",
+    "dados",
+    "database",
+    "schema",
+    "cache",
+    "data",
+    "persistencia"
+  ],
+  "tags": [
+    "data",
+    "storage",
+    "integration",
+    "api"
+  ],
+  "deliverables": [
+    "modelo de dados",
+    "fontes e destinos de informacao",
+    "estrategia de integracao",
+    "riscos de consistencia e performance"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando houver entidades, persistencia, APIs, cache, sincronizacao ou contratos de dados.",
+  "fallback_behavior": "Se o dominio de dados nao estiver descrito, pedir entidades, operacoes, volume, consistencia e integracoes externas."
+}

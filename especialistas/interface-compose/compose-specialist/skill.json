@@ -1,0 +1,43 @@
+{
+  "name": "especialista-compose",
+  "description": "Jetpack Compose, recomposition, state hoisting, side effects.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "state hoisting",
+    "recomposition",
+    "compose",
+    "android",
+    "jetpack compose",
+    "kotlin",
+    "jetpack"
+  ],
+  "tags": [
+    "android",
+    "compose",
+    "ui",
+    "jetpack"
+  ],
+  "deliverables": [
+    "arquitetura compose",
+    "otimizacao de recomposicao"
+  ],
+  "depends_on": [
+    "especialista-interface"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt descrevendo a necessidade tecnica desejada no Android.",
+    "format": "Texto livre"
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Análise técnica",
+    "format": "Markdown curto"
+  },
+  "activation_criteria": "Use quando a solicitacao envolver especialista compose no android.",
+  "fallback_behavior": "Pedir mais contexto se faltar escopo"
+}

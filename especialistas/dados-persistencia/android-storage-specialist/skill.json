@@ -1,0 +1,43 @@
+{
+  "name": "especialista-storage-android",
+  "description": "File storage, scoped storage, content providers for Android.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "files",
+    "scoped storage",
+    "storage",
+    "android",
+    "content provider",
+    "kotlin",
+    "jetpack"
+  ],
+  "tags": [
+    "android",
+    "storage",
+    "data",
+    "files"
+  ],
+  "deliverables": [
+    "estrategia de armazenamento",
+    "permissoes de arquivos"
+  ],
+  "depends_on": [
+    "especialista-dados"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt descrevendo a necessidade tecnica desejada no Android.",
+    "format": "Texto livre"
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Análise técnica",
+    "format": "Markdown curto"
+  },
+  "activation_criteria": "Use quando a solicitacao envolver especialista storage android no android.",
+  "fallback_behavior": "Pedir mais contexto se faltar escopo"
+}

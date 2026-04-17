@@ -1,0 +1,43 @@
+{
+  "name": "especialista-analise-projeto",
+  "description": "Performs project health checks, identifies structural issues and highlights technical and operational risks before changes are executed.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "analise de projeto",
+    "avaliar projeto",
+    "kotlin",
+    "android",
+    "jetpack",
+    "diagnosticar projeto",
+    "assessment",
+    "health check"
+  ],
+  "tags": [
+    "analysis",
+    "assessment",
+    "risk",
+    "project"
+  ],
+  "deliverables": [
+    "diagnostico do projeto",
+    "riscos estruturais",
+    "prioridades de correcao",
+    "recomendacoes de curto e medio prazo"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando o pedido for diagnosticar estado atual, avaliar maturidade, mapear risco ou revisar a base antes de mexer nela.",
+  "fallback_behavior": "Se o escopo da analise estiver aberto demais, pedir stack, area de foco, sintomas e objetivos da avaliacao."
+}

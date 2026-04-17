@@ -1,0 +1,48 @@
+{
+  "name": "especialista-testes-android",
+  "description": "Designs validation strategy across unit, integration, end-to-end and regression layers with pragmatic quality coverage.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "regressao",
+    "unitario",
+    "qa",
+    "android",
+    "kotlin",
+    "jetpack",
+    "coverage",
+    "teste",
+    "testes",
+    "e2e"
+  ],
+  "tags": [
+    "testing",
+    "qa",
+    "validation",
+    "regression"
+  ],
+  "deliverables": [
+    "estrategia de testes",
+    "matriz de cobertura",
+    "riscos nao cobertos",
+    "criterios de regressao e observabilidade"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando a solicitacao envolver testes, cobertura, validacao, regressao ou estrategia de QA.",
+  "fallback_behavior": "Se nao houver contexto suficiente, pedir partes criticas do sistema, riscos esperados e nivel de automacao desejado.",
+  "depends_on": [
+    "especialista-analise-projeto"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "especialista-automacao-testes-android",
+  "description": "Android test frameworks, Robolectric, fake data.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "android",
+    "automation",
+    "robolectric",
+    "kotlin",
+    "testing",
+    "jetpack",
+    "espresso"
+  ],
+  "tags": [
+    "android",
+    "testing",
+    "automation",
+    "quality"
+  ],
+  "deliverables": [
+    "testes automatizados",
+    "mocking"
+  ],
+  "depends_on": [],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt descrevendo a necessidade tecnica desejada no Android.",
+    "format": "Texto livre"
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Análise técnica",
+    "format": "Markdown curto"
+  },
+  "activation_criteria": "Use quando a solicitacao envolver especialista automacao testes android no android.",
+  "fallback_behavior": "Pedir mais contexto se faltar escopo"
+}

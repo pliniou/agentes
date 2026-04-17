@@ -1,0 +1,44 @@
+{
+  "name": "especialista-documentacao",
+  "description": "Produces technical documentation, onboarding material, reference guides and operational runbooks for software teams.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "onboarding",
+    "kotlin",
+    "api docs",
+    "android",
+    "guia",
+    "jetpack",
+    "readme",
+    "documentacao",
+    "runbook"
+  ],
+  "tags": [
+    "documentation",
+    "communication",
+    "runbook",
+    "reference"
+  ],
+  "deliverables": [
+    "estrutura documental recomendada",
+    "publico e objetivo por documento",
+    "secoes obrigatorias",
+    "riscos de manutencao da documentacao"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando o pedido envolver README, guias tecnicos, documentacao de API, onboarding ou runbooks.",
+  "fallback_behavior": "Se o tipo de documento nao estiver definido, pedir publico-alvo, objetivo, formato e profundidade esperada."
+}

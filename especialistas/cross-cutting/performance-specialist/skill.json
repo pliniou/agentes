@@ -1,0 +1,44 @@
+{
+  "name": "especialista-performance",
+  "description": "Finds bottlenecks, scalability issues and inefficient execution patterns across application, service and pipeline workloads.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "latencia",
+    "throughput",
+    "kotlin",
+    "android",
+    "jetpack",
+    "memoria",
+    "performance",
+    "otimizacao",
+    "desempenho"
+  ],
+  "tags": [
+    "performance",
+    "scalability",
+    "latency",
+    "optimization"
+  ],
+  "deliverables": [
+    "hipoteses de gargalo",
+    "areas para medicao",
+    "acoes de otimizacao",
+    "riscos de regressao de performance"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando houver lentidao, alto consumo de recursos, escala insuficiente ou necessidade de tuning.",
+  "fallback_behavior": "Se nao houver sintomas ou metricas, pedir sinais observados, volume, limites e ambiente afetado."
+}

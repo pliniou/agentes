@@ -1,0 +1,41 @@
+{
+  "name": "especialista-permissoes-android",
+  "description": "Runtime permissions, permission groups.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "jetpack",
+    "permissions",
+    "android",
+    "kotlin",
+    "privacy",
+    "runtime permissions"
+  ],
+  "tags": [
+    "android",
+    "permissions",
+    "security"
+  ],
+  "deliverables": [
+    "fluxo de permissoes",
+    "grupos de permissao"
+  ],
+  "depends_on": [
+    "especialista-seguranca"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt descrevendo a necessidade tecnica desejada no Android.",
+    "format": "Texto livre"
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Análise técnica",
+    "format": "Markdown curto"
+  },
+  "activation_criteria": "Use quando a solicitacao envolver especialista permissoes android no android.",
+  "fallback_behavior": "Pedir mais contexto se faltar escopo"
+}
