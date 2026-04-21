@@ -1,4 +1,5 @@
 {
+  "type": "orchestrator",
   "name": "workflow-orchestrator",
   "description": "Routes prompts to the most relevant specialists, orders execution when needed and consolidates the resulting guidance.",
   "language": "python",
@@ -37,5 +38,6 @@
     "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
   },
   "activation_criteria": "Use quando a solicitacao pedir coordenacao entre especialistas, roteamento automatico ou um workflow composto por varias competencias.",
-  "fallback_behavior": "Se nenhum especialista pontuar, listar o catalogo e sugerir os mais proximos por dominio."
+  "fallback_behavior": "Se nenhum especialista pontuar, listar o catalogo e sugerir os mais proximos por dominio.",
+  "depends_on": []
 }

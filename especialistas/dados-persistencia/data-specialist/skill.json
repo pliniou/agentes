@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-dados",
   "description": "Designs data models, persistence strategies, integrations and data flow boundaries for application and platform projects.",
   "language": "python",
@@ -41,5 +42,6 @@
     "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
   },
   "activation_criteria": "Use quando houver entidades, persistencia, APIs, cache, sincronizacao ou contratos de dados.",
-  "fallback_behavior": "Se o dominio de dados nao estiver descrito, pedir entidades, operacoes, volume, consistencia e integracoes externas."
+  "fallback_behavior": "Se o dominio de dados nao estiver descrito, pedir entidades, operacoes, volume, consistencia e integracoes externas.",
+  "depends_on": []
 }

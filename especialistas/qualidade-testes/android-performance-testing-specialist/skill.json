@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-performance-testing-android",
   "description": "Macrobenchmark, Microbenchmark, startup profiling.",
   "language": "python",
@@ -7,24 +8,23 @@
     "prompt"
   ],
   "aliases": [
-    "android",
     "microbenchmark",
-    "kotlin",
     "macrobenchmark",
     "performance profiling",
-    "jetpack"
+    "benchmark",
+    "profiling",
+    "startup tracing"
   ],
   "tags": [
     "android",
-    "performance",
+    "benchmarking",
     "testing",
-    "benchmark"
+    "profiling"
   ],
   "deliverables": [
     "benchmarks",
     "analise de startup"
   ],
-  "depends_on": [],
   "input_contract": {
     "type": "string",
     "description": "Prompt descrevendo a necessidade tecnica desejada no Android.",
@@ -36,5 +36,6 @@
     "format": "Markdown curto"
   },
   "activation_criteria": "Use quando a solicitacao envolver especialista performance testing android no android.",
-  "fallback_behavior": "Pedir mais contexto se faltar escopo"
+  "fallback_behavior": "Se a medicao nao estiver definida, pedir metrica alvo, dispositivo ou lab, cenarios criticos e limite aceitavel.",
+  "depends_on": []
 }

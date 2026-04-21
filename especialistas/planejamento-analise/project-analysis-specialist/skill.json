@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-analise-projeto",
   "description": "Performs project health checks, identifies structural issues and highlights technical and operational risks before changes are executed.",
   "language": "python",
@@ -39,5 +40,6 @@
     "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
   },
   "activation_criteria": "Use quando o pedido for diagnosticar estado atual, avaliar maturidade, mapear risco ou revisar a base antes de mexer nela.",
-  "fallback_behavior": "Se o escopo da analise estiver aberto demais, pedir stack, area de foco, sintomas e objetivos da avaliacao."
+  "fallback_behavior": "Se o escopo da analise estiver aberto demais, pedir stack, area de foco, sintomas e objetivos da avaliacao.",
+  "depends_on": []
 }

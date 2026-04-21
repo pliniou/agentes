@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-lifecycle-android",
   "description": "Lifecycle, ViewModel, SavedStateHandle, process death strategies.",
   "language": "python",
@@ -24,9 +25,6 @@
     "gestao de estado",
     "estrategias de sobrevivencia"
   ],
-  "depends_on": [
-    "especialista-arquitetura"
-  ],
   "input_contract": {
     "type": "string",
     "description": "Prompt descrevendo a necessidade tecnica desejada no Android.",
@@ -38,5 +36,8 @@
     "format": "Markdown curto"
   },
   "activation_criteria": "Use quando a solicitacao envolver especialista lifecycle android no android.",
-  "fallback_behavior": "Pedir mais contexto se faltar escopo"
+  "fallback_behavior": "Se o ciclo de vida nao estiver claro, pedir componentes envolvidos, eventos criticos, persistencia de estado e riscos de process death.",
+  "depends_on": [
+    "especialista-arquitetura"
+  ]
 }

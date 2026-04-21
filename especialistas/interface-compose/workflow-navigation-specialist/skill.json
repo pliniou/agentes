@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-navegacao",
   "description": "Designs navigation models, journey flows and route transitions across product experiences and multi-step workflows.",
   "language": "python",

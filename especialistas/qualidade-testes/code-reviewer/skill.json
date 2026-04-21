@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-code-review",
   "description": "Reviews code changes with emphasis on bugs, regressions, maintainability problems and unsafe assumptions.",
   "language": "python",

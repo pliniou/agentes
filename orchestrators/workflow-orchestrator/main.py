@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import argparse
-import json
 import subprocess
 import sys
 import unicodedata
@@ -15,8 +14,12 @@ SHARED_DIR = REPO_DIR / "core"
 if str(SHARED_DIR) not in sys.path:
     sys.path.insert(0, str(SHARED_DIR))
 
+from catalog import MANIFEST_TYPE_SPECIALIST, load_manifests
 from context import AgentContext, create_context_from_prompt, serialize_context
 from execution import ExecutionOrderPlanner, determine_execution_strategy
+
+WEIGHT_EXACT_NAME_MATCH = 10
+WEIGHT_ALIAS_MATCH = 5
 
 
 STOPWORDS = {
@@ -61,14 +64,7 @@ def tokenize(value: str) -> set[str]:
 
 
 def load_skills() -> list[dict[str, Any]]:
-    skills: list[dict[str, Any]] = []
-    for skill_file in REPO_DIR.rglob("skill.json"):
-        data = json.loads(skill_file.read_text(encoding="utf-8"))
-        if data["name"] == "workflow-orchestrator":
-            continue
-        data["skill_dir"] = str(skill_file.parent)
-        skills.append(data)
-    return sorted(skills, key=lambda item: item["name"])
+    return load_manifests({MANIFEST_TYPE_SPECIALIST})
 
 
 def score_skill(skill: dict[str, Any], prompt: str, tokens: set[str]) -> tuple[float, list[str]]:
@@ -81,12 +77,12 @@ def score_skill(skill: dict[str, Any], prompt: str, tokens: set[str]) -> tuple[f
     description_tokens = tokenize(skill.get("description", ""))
 
     if normalize_text(skill["name"]) in prompt:
-        score += 10
+        score += WEIGHT_EXACT_NAME_MATCH
         reasons.append("name")
 
     alias_hits = [alias for alias in alias_tokens if alias and alias in prompt]
     if alias_hits:
-        score += len(alias_hits) * 5
+        score += len(alias_hits) * WEIGHT_ALIAS_MATCH
         reasons.append("aliases=" + ", ".join(alias_hits))
 
     overlap = sorted((name_tokens | description_tokens | set(tag_tokens)).intersection(tokens))
@@ -167,13 +163,20 @@ def main(argv: list[str] | None = None) -> int:
         )
 
     strategy = determine_execution_strategy(prompt)
-    ordered_plan = ExecutionOrderPlanner.get_execution_plan(
-        plan_input,
-        strategy=strategy,
-        context=planner_context,
-    )
+    try:
+        ordered_plan = ExecutionOrderPlanner.get_execution_plan(
+            plan_input,
+            strategy=strategy,
+            context=planner_context,
+            available_agents=skills,
+        )
+    except ValueError as exc:
+        print(f"[ERRO] Falha no planejamento de dependencias: {exc}", file=sys.stderr)
+        return 1
+
     ordered_names = [item["name"] for item in ordered_plan]
-    ordered_skills = sorted(selected, key=lambda item: ordered_names.index(item["name"]))
+    skill_registry = {skill["name"]: skill for skill in skills}
+    ordered_skills = [skill_registry[name] for name in ordered_names]
 
     if args.explain or args.dry_run or len(ordered_skills) > 1:
         print("Routing plan:")

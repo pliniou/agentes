@@ -1,0 +1,46 @@
+{
+  "type": "specialist",
+  "name": "especialista-exportacao-documentos",
+  "description": "Designs PDF generation, printable reports, document export flows and sharing strategies for product features.",
+  "language": "python",
+  "entry_point": "../../../core/agent_wrapper.py",
+  "arguments": [
+    "prompt"
+  ],
+  "aliases": [
+    "pdf",
+    "exportacao",
+    "export",
+    "relatorio",
+    "impressao",
+    "printing",
+    "documento"
+  ],
+  "tags": [
+    "document-export",
+    "pdf",
+    "printing",
+    "reporting"
+  ],
+  "deliverables": [
+    "estrategia de geracao de documentos",
+    "fluxo de exportacao e compartilhamento",
+    "requisitos de layout e compatibilidade",
+    "riscos operacionais e de armazenamento"
+  ],
+  "input_contract": {
+    "type": "string",
+    "description": "Prompt em linguagem natural descrevendo a necessidade tecnica, o contexto do projeto e os resultados esperados.",
+    "format": "Texto livre em portugues ou ingles, com detalhes suficientes para orientar a analise ou execucao do agente."
+  },
+  "output_contract": {
+    "type": "text/markdown",
+    "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
+    "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
+  },
+  "activation_criteria": "Use quando a solicitacao envolver geracao de PDF, exportacao de relatorios, impressao, compartilhamento de documentos ou requisitos de layout imprimivel.",
+  "fallback_behavior": "Se o documento nao estiver definido, pedir formato alvo, origem dos dados, requisitos visuais e canal de entrega.",
+  "depends_on": [
+    "especialista-documentacao"
+  ]
+}

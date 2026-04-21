@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-build-release",
   "description": "Structures build, packaging, release and delivery pipelines for predictable and repeatable software delivery.",
   "language": "python",
@@ -41,5 +42,6 @@
     "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
   },
   "activation_criteria": "Use quando a solicitacao envolver build, empacotamento, distribuicao, publicacao ou automacao de entrega.",
-  "fallback_behavior": "Se faltar contexto, pedir stack, ambiente de execucao, artefatos gerados e politica de release."
+  "fallback_behavior": "Se faltar contexto, pedir stack, ambiente de execucao, artefatos gerados e politica de release.",
+  "depends_on": []
 }

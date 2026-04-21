@@ -5,27 +5,19 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+from typing import Any
+
+from core.catalog import load_manifests
 
 
 BASE_DIR = Path(__file__).resolve().parent
 
 
-def iter_skills() -> list[dict]:
-    skills: list[dict] = []
-    for skill_file in BASE_DIR.rglob("skill.json"):
-        try:
-            data = json.loads(skill_file.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as exc:
-            raise RuntimeError(f"Manifesto invalido: {skill_file}: {exc}") from exc
-
-        data["manifest_path"] = str(skill_file)
-        data["skill_dir"] = str(skill_file.parent)
-        skills.append(data)
-
-    return sorted(skills, key=lambda item: item["name"])
+def iter_skills() -> list[dict[str, Any]]:
+    return load_manifests()
 
 
-def find_skill(skills: list[dict], name: str) -> dict | None:
+def find_skill(skills: list[dict[str, Any]], name: str) -> dict[str, Any] | None:
     normalized = name.strip().lower()
     for skill in skills:
         aliases = [alias.lower() for alias in skill.get("aliases", [])]
@@ -34,7 +26,7 @@ def find_skill(skills: list[dict], name: str) -> dict | None:
     return None
 
 
-def run_skill(skill: dict, prompt: str, context: dict | None = None) -> int:
+def run_skill(skill: dict[str, Any], prompt: str, context: dict[str, Any] | None = None) -> int:
     skill_dir = Path(skill["skill_dir"])
     wrapper = BASE_DIR / "core" / "agent_wrapper.py"
     command = [sys.executable, str(wrapper), str(skill_dir), prompt]

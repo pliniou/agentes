@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-compose",
   "description": "Jetpack Compose, recomposition, state hoisting, side effects.",
   "language": "python",
@@ -25,9 +26,6 @@
     "arquitetura compose",
     "otimizacao de recomposicao"
   ],
-  "depends_on": [
-    "especialista-interface"
-  ],
   "input_contract": {
     "type": "string",
     "description": "Prompt descrevendo a necessidade tecnica desejada no Android.",
@@ -39,5 +37,8 @@
     "format": "Markdown curto"
   },
   "activation_criteria": "Use quando a solicitacao envolver especialista compose no android.",
-  "fallback_behavior": "Pedir mais contexto se faltar escopo"
+  "fallback_behavior": "Se o escopo da UI Compose nao estiver claro, pedir telas, estados, regras de estado e integracoes com a camada de apresentacao.",
+  "depends_on": [
+    "especialista-interface"
+  ]
 }

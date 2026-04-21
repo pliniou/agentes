@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-background-processing-android",
   "description": "Foreground services, WorkManager advanced, alarms.",
   "language": "python",
@@ -25,7 +26,6 @@
     "servicos",
     "workmanager avanado"
   ],
-  "depends_on": [],
   "input_contract": {
     "type": "string",
     "description": "Prompt descrevendo a necessidade tecnica desejada no Android.",
@@ -37,5 +37,6 @@
     "format": "Markdown curto"
   },
   "activation_criteria": "Use quando a solicitacao envolver especialista background processing android no android.",
-  "fallback_behavior": "Pedir mais contexto se faltar escopo"
+  "fallback_behavior": "Se o trabalho em background nao estiver caracterizado, pedir gatilho, periodicidade, restricoes do sistema e tolerancia a atraso.",
+  "depends_on": []
 }

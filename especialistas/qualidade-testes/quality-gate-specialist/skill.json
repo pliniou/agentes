@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-quality-gate",
   "description": "Evaluates quality signals such as standards adherence, testability, clarity, consistency and operational readiness.",
   "language": "python",

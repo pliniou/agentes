@@ -4,17 +4,15 @@ Repositorio de agentes e skills reutilizaveis para analise, planejamento, implem
 
 ## Estrutura
 
-- `workflow-orchestrator/`: roteamento e sintese multiagente.
-- `shared-skills/`: runtime, utilitarios de contexto e ordenacao de execucao.
-- `engineering-specialists/`: especialistas de arquitetura, dados, build, interface, testes, contexto e manutencao.
-- `quality-specialists/`: especialistas de revisao, impacto e gates de qualidade.
-- `documentation-specialist/`, `performance-specialist/`, `security-specialist/`: especialistas independentes.
-- `design-specialists/design-system-specialist/`: skill de design system com referencia visual reutilizavel.
+- `core/`: runtime compartilhado, contexto, catalogo e ordenacao de execucao.
+- `especialistas/`: especialistas por dominio tecnico, incluindo arquitetura, dados, build, interface, testes e concerns transversais.
+- `orchestrators/workflow-orchestrator/`: roteamento e sintese multiagente.
 
 ## Convencoes
 
 - Todo agente e descrito por `skill.json`.
 - Todos os agentes executam via Python usando o mesmo runtime compartilhado.
+- Cada manifesto declara `type` (`specialist` ou `orchestrator`) e `depends_on`, mesmo quando a lista esta vazia.
 - Nomes, aliases e tags sao usados pelo workflow-orchestrator para roteamento.
 - Dependencias opcionais entre agentes sao declaradas por `depends_on`.
 
@@ -35,7 +33,7 @@ python .\autoload_skills.py architecture-specialist "projetar arquitetura para p
 Roteamento automatico:
 
 ```powershell
-python .\workflow-orchestrator\main.py "planejar migracao, revisar impacto e definir estrategia de testes"
+python .\orchestrators\workflow-orchestrator\main.py "planejar migracao, revisar impacto e definir estrategia de testes"
 ```
 
 Validacao completa do catalogo:

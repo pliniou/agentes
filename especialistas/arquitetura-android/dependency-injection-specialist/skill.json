@@ -1,34 +1,31 @@
 {
   "type": "specialist",
-  "name": "especialista-planejamento",
-  "description": "Builds execution plans, roadmaps and staged delivery proposals with scope, dependencies, risks and validation points.",
+  "name": "especialista-di-android",
+  "description": "Covers dependency injection with Hilt, Dagger, scoping and binding design for Android applications.",
   "language": "python",
   "entry_point": "../../../core/agent_wrapper.py",
   "arguments": [
     "prompt"
   ],
   "aliases": [
-    "kotlin",
-    "android",
-    "jetpack",
-    "planejamento",
-    "cronograma",
-    "roadmap",
-    "scope",
-    "plano",
-    "etapas"
+    "hilt",
+    "dagger",
+    "dependency injection",
+    "injecao de dependencia",
+    "di",
+    "bindings"
   ],
   "tags": [
-    "planning",
-    "roadmap",
-    "delivery",
-    "prioritization"
+    "android",
+    "dependency-injection",
+    "hilt",
+    "dagger"
   ],
   "deliverables": [
-    "roadmap por fases",
-    "dependencias e ordem de execucao",
-    "riscos e bloqueios",
-    "criterios de aceite por etapa"
+    "estrategia de DI",
+    "mapeamento de scopes e componentes",
+    "regras para modules e bindings",
+    "riscos de acoplamento e teste"
   ],
   "input_contract": {
     "type": "string",
@@ -40,9 +37,9 @@
     "description": "Resposta estruturada com foco, entregaveis recomendados, criterios de ativacao e orientacao de execucao.",
     "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
   },
-  "activation_criteria": "Use quando a solicitacao exigir plano de execucao, priorizacao, fases, milestones ou cronograma.",
-  "fallback_behavior": "Se o objetivo ainda estiver difuso, pedir escopo, prazo, recursos disponiveis e restricoes conhecidas.",
+  "activation_criteria": "Use quando a solicitacao envolver Hilt, Dagger, injecao de dependencia, definicao de scopes ou wiring entre modulos Android.",
+  "fallback_behavior": "Se a configuracao de DI nao estiver clara, pedir stack Android, modulos envolvidos, escopos desejados e sintomas atuais.",
   "depends_on": [
-    "especialista-analise-projeto"
+    "especialista-arquitetura"
   ]
 }

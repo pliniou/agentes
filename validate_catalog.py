@@ -5,9 +5,16 @@ import subprocess
 import sys
 from pathlib import Path
 
+from core.catalog import (
+    MANIFEST_TYPE_ORCHESTRATOR,
+    VALID_MANIFEST_TYPES,
+    iter_manifest_paths,
+)
+
 
 BASE_DIR = Path(__file__).resolve().parent
 REQUIRED_FIELDS = {
+    "type": str,
     "name": str,
     "description": str,
     "language": str,
@@ -20,11 +27,12 @@ REQUIRED_FIELDS = {
     "output_contract": dict,
     "activation_criteria": str,
     "fallback_behavior": str,
+    "depends_on": list,
 }
 
 
 def iter_manifests() -> list[Path]:
-    return sorted(BASE_DIR.rglob("skill.json"))
+    return iter_manifest_paths()
 
 
 def validate_manifest(path: Path) -> list[str]:
@@ -45,6 +53,10 @@ def validate_manifest(path: Path) -> list[str]:
     if data.get("language") != "python":
         errors.append(f"{path}: language must be python")
 
+    if data.get("type") not in VALID_MANIFEST_TYPES:
+        valid_types = ", ".join(sorted(VALID_MANIFEST_TYPES))
+        errors.append(f"{path}: type must be one of {valid_types}")
+
     entry_path = path.parent / data.get("entry_point", "")
     if not entry_path.is_file():
         errors.append(f"{path}: entry point not found: {entry_path}")
@@ -56,13 +68,17 @@ def validate_manifest(path: Path) -> list[str]:
         elif not all(isinstance(item, str) and item.strip() for item in values):
             errors.append(f"{path}: field '{list_field}' must contain non-empty strings")
 
+    depends_on = data.get("depends_on", [])
+    if not all(isinstance(item, str) and item.strip() for item in depends_on):
+        errors.append(f"{path}: field 'depends_on' must contain non-empty strings")
+
     return errors
 
 
 def smoke_test_agent(path: Path) -> list[str]:
     data = json.loads(path.read_text(encoding="utf-8"))
     entry_path = (path.parent / data["entry_point"]).resolve()
-    if data["name"] == "workflow-orchestrator":
+    if data["type"] == MANIFEST_TYPE_ORCHESTRATOR:
         command = [sys.executable, str(entry_path), "--dry-run", "smoke orchestration for tests and review"]
     else:
         command = [sys.executable, str(entry_path), str(path.parent), f"smoke test for {data['name']}", '{"original_prompt":"smoke"}']

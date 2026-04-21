@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-localizacao",
   "description": "Defines internationalization, localization and regional adaptation strategies for product interfaces and content.",
   "language": "python",

@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-automacao-testes-android",
   "description": "Android test frameworks, Robolectric, fake data.",
   "language": "python",
@@ -25,7 +26,6 @@
     "testes automatizados",
     "mocking"
   ],
-  "depends_on": [],
   "input_contract": {
     "type": "string",
     "description": "Prompt descrevendo a necessidade tecnica desejada no Android.",
@@ -37,5 +37,6 @@
     "format": "Markdown curto"
   },
   "activation_criteria": "Use quando a solicitacao envolver especialista automacao testes android no android.",
-  "fallback_behavior": "Pedir mais contexto se faltar escopo"
+  "fallback_behavior": "Se a automacao nao estiver delimitada, pedir camada de teste, fluxo critico, ambiente de execucao e nivel de confiabilidade esperado.",
+  "depends_on": []
 }

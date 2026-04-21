@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-kotlin-idioms",
   "description": "Kotlin best practices, null safety, functional patterns.",
   "language": "python",
@@ -23,7 +24,6 @@
     "idiomas kotlin",
     "refatoracao funcional"
   ],
-  "depends_on": [],
   "input_contract": {
     "type": "string",
     "description": "Prompt descrevendo a necessidade tecnica desejada no Android.",
@@ -35,5 +35,6 @@
     "format": "Markdown curto"
   },
   "activation_criteria": "Use quando a solicitacao envolver especialista kotlin idioms no android.",
-  "fallback_behavior": "Pedir mais contexto se faltar escopo"
+  "fallback_behavior": "Se o codigo Kotlin nao estiver exemplificado, pedir trechos relevantes, padroes desejados e gargalos de legibilidade ou seguranca.",
+  "depends_on": []
 }

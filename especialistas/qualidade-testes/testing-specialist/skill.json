@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-testes-android",
   "description": "Designs validation strategy across unit, integration, end-to-end and regression layers with pragmatic quality coverage.",
   "language": "python",

@@ -1,4 +1,5 @@
 {
+  "type": "specialist",
   "name": "especialista-seguranca",
   "description": "Assesses threats, unsafe patterns, sensitive data handling and hardening opportunities across software systems.",
   "language": "python",
@@ -40,5 +41,6 @@
     "format": "Markdown curto, orientado para acao e reutilizavel em workflows multiagente."
   },
   "activation_criteria": "Use quando o pedido envolver autenticacao, autorizacao, dados sensiveis, vulnerabilidades ou requisitos de protecao.",
-  "fallback_behavior": "Se o risco ainda nao estiver caracterizado, pedir ativos sensiveis, fronteiras de confianca e ameacas consideradas."
+  "fallback_behavior": "Se o risco ainda nao estiver caracterizado, pedir ativos sensiveis, fronteiras de confianca e ameacas consideradas.",
+  "depends_on": []
 }
